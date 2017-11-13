@@ -49,7 +49,7 @@ public class Cargar {
           double arriendo=entrada.nextDouble();
             int area=entrada.nextInt();
             String modo=entrada.next();
-          this.inmuebles.add(new Oficina( Id, nombrebarrio, estrato, arriendo, area, Tipo));
+          this.inmuebles.add(new Oficina( Id, nombrebarrio, estrato, arriendo, area, modo));
           
           
           }else if(Tipo.equals("E")){
@@ -71,6 +71,43 @@ public class Cargar {
             String descripcion=entrada.next();
             boolean viaPrincipal=entrada.nextBoolean();
             this.inmuebles.add(new Local(Id, nombrebarrio, estrato, arriendo, area, descripcion, viaPrincipal));
+          }else if(Tipo.equals("OP")){
+          
+          int Id=entrada.nextInt();
+          String nombrebarrio=entrada.next();
+          int estrato=entrada.nextInt();
+          double arriendo=entrada.nextDouble();
+            int area=entrada.nextInt();
+            String modo=entrada.next();
+            int IdPiso=entrada.nextInt();
+            for(Inmueble i:this.inmuebles){
+            if(i instanceof Piso){
+            if(i.getId()==IdPiso){
+            Piso piso=(Piso)i;
+            piso.AddOficina(Id, nombrebarrio, estrato, arriendo, area, modo);
+            break;
+            }
+            }
+            }
+          }else if(Tipo.equals("PE")){
+           int Id=entrada.nextInt();
+          String nombrebarrio=entrada.next();
+          int estrato=entrada.nextInt();
+          double arriendo=entrada.nextDouble();
+            int area=entrada.nextInt();
+            int numerooficinas=entrada.nextInt();
+            String propietario=entrada.next();
+            for(Inmueble i:this.inmuebles){
+            if(i instanceof Edificio){
+            Edificio edificio=(Edificio)i;    
+                if(edificio.getPropietario().equalsIgnoreCase(propietario)){
+            edificio.addPiso(Id, nombrebarrio, estrato, arriendo, area, numerooficinas);
+            break;
+                }
+            
+            
+            }
+            }
           }
           
           

@@ -5,22 +5,46 @@
  */
 package Datos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Estudiante
  */
 public class Edificio extends Inmueble {
 private String propietario;
+private ArrayList<Piso>pisos;
     public Edificio(int Id, String NombreBarrio, int estrato, double valorArriendo, int areaConstruida,String Propietario) {
         super(Id, NombreBarrio, estrato, valorArriendo, areaConstruida);
         this.propietario=Propietario;
+       this.pisos=new ArrayList<>();
     }
 
     @Override
     public String darInformacion() {
-        return "Id:"+this.Id+"Barrio:"+this.NombreBarrio+"estrato:"+this.estrato+"Arriendo"+this.valorArriendo+"area"+this.areaConstruida+"Propietario:"+propietario;
+       String cadena=" Edificio Id: "+this.Id+" Barrio: "+this.NombreBarrio+" estrato: "+this.estrato+" Arriendo: "+this.valorArriendo+" area: "+this.areaConstruida+" Propietario: "+propietario+"\n";
+       if(this.pisos.size()>0){
+           cadena+="a continuacion se enuncian los pisos que pertenecen a este edificio \n";
+        for(Piso piso:this.pisos){
+        
+        cadena+=piso.darInformacion();
+        }
+        cadena+="-------------------------------------------------\n";
+       }        
+        return cadena; 
     }
+   
+    
+   public void addPiso(int Id, String NombreBarrio, int estrato, double valorArriendo, int areaConstruida,int numeroficinas){
+   this.pisos.add(new Piso(Id, NombreBarrio, estrato, valorArriendo, areaConstruida, numeroficinas));
+   
+       
+       
+   }
 
+    public String getPropietario() {
+        return propietario;
+    }
     
     
     

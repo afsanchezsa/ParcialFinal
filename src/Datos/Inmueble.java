@@ -30,6 +30,10 @@ public abstract class Inmueble {
         this.areaConstruida = areaConstruida;
         this.Id=Id;
     }
+
+    public int getId() {
+        return Id;
+    }
     public abstract String darInformacion();
     
     

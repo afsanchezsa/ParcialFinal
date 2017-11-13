@@ -19,7 +19,7 @@ private String Tipo;
 
     @Override
     public String darInformacion() {
-       return "Id:"+this.Id+"Barrio:"+this.NombreBarrio+"estrato:"+this.estrato+"Arriendo"+this.valorArriendo+"area"+this.areaConstruida+"Tipo"+this.Tipo;
+       return "Oficina Id: "+this.Id+" Barrio: "+this.NombreBarrio+" estrato: "+this.estrato+" Arriendo: "+this.valorArriendo+" area: "+this.areaConstruida+" Tipo: "+this.Tipo+"\n";
     }
     
 }

@@ -22,7 +22,7 @@ public class Local extends Inmueble {
 
     @Override
     public String darInformacion() {
-       return  "Id:"+this.Id+"Barrio:"+this.NombreBarrio+"estrato:"+this.estrato+"Arriendo"+this.valorArriendo+"area"+this.areaConstruida+"Descripcion:"+this.descripcion+"ViaPrincipal:"+this.viaPrincipal;
+       return  "Local Id: "+this.Id+" Barrio: "+this.NombreBarrio+" estrato: "+this.estrato+" Arriendo: "+this.valorArriendo+" area: "+this.areaConstruida+" Descripcion: "+this.descripcion+" ViaPrincipal: "+this.viaPrincipal+"\n";
     }
      
 }

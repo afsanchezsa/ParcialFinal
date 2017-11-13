@@ -1,1 +1,6 @@
-P,1,Rincon,2,500000,15,147
+P,1,Rincon,2,500000,15,147,
+O,2,Esperanza,3,340000,78,Edificio,
+E,3,Aures,4,760000,56,Andres,
+L,4,Candelaria,3,300000,234,Cercano a vias principales,true,
+OP,5,Rincon,4,500000,23,Piso,1,
+PE,6,Aures,4,680000,54,2,Andres
