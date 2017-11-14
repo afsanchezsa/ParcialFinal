@@ -108,8 +108,28 @@ public class Cargar {
             
             }
             }
-          }
+          }else if(Tipo.equals("LE")){
+           int Id=entrada.nextInt();
+          String nombrebarrio=entrada.next();
+          int estrato=entrada.nextInt();
+          double arriendo=entrada.nextDouble();
+            int area=entrada.nextInt();
+            String descripcion=entrada.next();
+            boolean viaPrincipal=entrada.nextBoolean();
+            String Propietario=entrada.next();
+            for(Inmueble i:this.inmuebles){
+            if(i instanceof Edificio){
+            Edificio edificio=(Edificio)i;    
+                if(edificio.getPropietario().equalsIgnoreCase(Propietario)){
+            edificio.addLocal(Id, nombrebarrio, estrato, arriendo, area, descripcion, viaPrincipal);
+            break;
+                }
+            
+            
+            }
+            } 
           
+          }
           
           
           

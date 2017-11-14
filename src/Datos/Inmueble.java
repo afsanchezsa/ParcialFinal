@@ -15,6 +15,7 @@ public abstract class Inmueble {
     protected int estrato;
     protected double valorArriendo;
     protected int areaConstruida;
+    protected Inquilino inquilino;
 
     public Inmueble(String NombreBarrio, int estrato, double valorArriendo, int areaConstruida) {
         this.NombreBarrio = NombreBarrio;
@@ -22,6 +23,7 @@ public abstract class Inmueble {
         this.valorArriendo = valorArriendo;
         this.areaConstruida = areaConstruida;
         this.Id++;
+        this.inquilino=null;
     }
       public Inmueble(int Id,String NombreBarrio, int estrato, double valorArriendo, int areaConstruida) {
         this.NombreBarrio = NombreBarrio;
@@ -29,8 +31,18 @@ public abstract class Inmueble {
         this.valorArriendo = valorArriendo;
         this.areaConstruida = areaConstruida;
         this.Id=Id;
+        this.inquilino=null;
     }
-
+public void setInquilino(Inquilino inquilino){
+this.inquilino=inquilino;
+}  
+public boolean Desocupado(){
+if(this.inquilino==null){
+return true;
+}else{
+return false;
+}
+}
     public int getId() {
         return Id;
     }

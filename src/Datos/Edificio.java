@@ -14,10 +14,13 @@ import java.util.ArrayList;
 public class Edificio extends Inmueble {
 private String propietario;
 private ArrayList<Piso>pisos;
+private ArrayList<Local>locales;
     public Edificio(int Id, String NombreBarrio, int estrato, double valorArriendo, int areaConstruida,String Propietario) {
         super(Id, NombreBarrio, estrato, valorArriendo, areaConstruida);
         this.propietario=Propietario;
        this.pisos=new ArrayList<>();
+this.locales=new ArrayList<>();
+
     }
 
     @Override
@@ -30,6 +33,11 @@ private ArrayList<Piso>pisos;
         cadena+=piso.darInformacion();
         }
         cadena+="-------------------------------------------------\n";
+       for(Local l:this.locales){
+       cadena+=l.darInformacion();
+       
+       }
+       cadena+="--------------------------------------------------\n";
        }        
         return cadena; 
     }
@@ -41,12 +49,28 @@ private ArrayList<Piso>pisos;
        
        
    }
-
+public ArrayList<Inmueble>PisosYOficinasLibres(){
+ArrayList<Inmueble>inmuebles=new ArrayList<>();
+    for(Piso p:this.pisos){
+if(p.Desocupado()==true){
+inmuebles.add(p);
+for(Oficina o:p.getOficinas()){
+if(o.Desocupado()==true){
+inmuebles.add(o);
+}
+}
+}
+}
+    return inmuebles;
+}
     public String getPropietario() {
         return propietario;
     }
     
+    public void addLocal(int Id, String NombreBarrio, int estrato, double valorArriendo, int areaConstruida,String descripcion,boolean viaPrincipal){
+    this.locales.add(new Local(Id, NombreBarrio, estrato, valorArriendo, areaConstruida, descripcion, viaPrincipal));
     
+    }
     
 
     

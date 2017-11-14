@@ -41,4 +41,8 @@ private ArrayList<Oficina>oficinas;
     public int getNumeroOficinas(){
     return this.NumeroOficinas;
     }
+
+    public ArrayList<Oficina> getOficinas() {
+        return oficinas;
+    }
 }
